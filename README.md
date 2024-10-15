@@ -58,3 +58,22 @@ PING google.com (142.250.201.78): 56 data bytes
 4 packets transmitted, 4 packets received, 0% packet loss
 round-trip min/avg/max = 17.258/17.448/17.562 ms
 ~~~
+
+### 5. Crea un contenedor con el nombre 'dam_alp2'. ¿Puedes hacer ping entre los contenedores?
+
+Creamos el contenedor dam_alp2 y hacemos ping a la ip del contenedor dam_alp1 con el mismo comando pero utilizando su ip <code>ping 172.17.0.3</code>, y vemos que sí se puede hacer ping entre ellos.   
+~~~
+enrique@damenrique:~$ docker start dam_alp2 
+dam_alp2
+enrique@damenrique:~$ docker exec -it dam_alp2 /bin/sh
+/ # ping 172.17.0.3
+PING 172.17.0.3 (172.17.0.3): 56 data bytes
+64 bytes from 172.17.0.3: seq=0 ttl=64 time=0.082 ms
+64 bytes from 172.17.0.3: seq=1 ttl=64 time=0.193 ms
+64 bytes from 172.17.0.3: seq=2 ttl=64 time=0.120 ms
+^C
+--- 172.17.0.3 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.082/0.131/0.193 ms
+
+~~~
