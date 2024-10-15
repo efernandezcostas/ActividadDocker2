@@ -108,3 +108,12 @@ Containers      6         2         205B      0B (0%)
 Local Volumes   0         0         0B        0B
 Build Cache     0         0         0B        0B
 ~~~
+
+### 8. ¿Cuanta RAM ocupan los contenedores? ¿Hay algún comando docker para saber esto?
+
+Sí, existe el comando <code>docker stats</code> que es como el comando <code>top</code> en Linux, lo que muestra información de los procesos en ejecución.
+~~~
+CONTAINER ID   NAME       CPU %     MEM USAGE / LIMIT   MEM %     NET I/O   BLOCK I/O   PIDS
+025713cc8081   dam_alp2   0.00%     512KiB / 10.24GiB   0.00%     1.01kB / 0B       0B / 0B     1
+f71d2ccbf20c   dam_alp1   0.00%     528KiB / 10.24GiB   0.00%     10.2kB / 9.47kB   0B / 0B     1
+~~~
