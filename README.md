@@ -75,5 +75,25 @@ PING 172.17.0.3 (172.17.0.3): 56 data bytes
 --- 172.17.0.3 ping statistics ---
 3 packets transmitted, 3 packets received, 0% packet loss
 round-trip min/avg/max = 0.082/0.131/0.193 ms
+~~~
 
+### 6. Sal del terminal, ¿que ocurrió con el contenedor?
+
+Al salir de la terminal e intentar hacer ping al contenedor desde el equipo vemos que permite hacer ping pero no llegan los paquetes.
+~~~
+dam@A09equipo21:~$ ping 172.17.0.3
+PING 172.17.0.3 (172.17.0.3) 56(84) bytes of data.
+^C
+--- 172.17.0.3 ping statistics ---
+6 packets transmitted, 0 received, 100% packet loss, time 5126ms
+~~~
+
+Una vez dentro de docker utilizo el comando <code>docker ps -a</code> y los contenedores aparecen todavía en ejecución   
+~~~
+enrique@damenrique:~$ docker ps -a
+CONTAINER ID   IMAGE         COMMAND     CREATED          STATUS                    PORTS     NAMES
+025713cc8081   alpine        "/bin/sh"   7 minutes ago    Up 4 minutes                        dam_alp2
+f71d2ccbf20c   alpine        "/bin/sh"   33 minutes ago   Up 31 minutes                       dam_alp1
+4888d77c9d4b   alpine        "/bin/sh"   54 minutes ago   Created                             distracted_napier
+fcdfbf24ca42   hello-world   "/hello"    24 hours ago     Exited (0) 24 hours ago             pensive_shannon
 ~~~
