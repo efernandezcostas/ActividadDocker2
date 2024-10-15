@@ -97,3 +97,14 @@ f71d2ccbf20c   alpine        "/bin/sh"   33 minutes ago   Up 31 minutes         
 4888d77c9d4b   alpine        "/bin/sh"   54 minutes ago   Created                             distracted_napier
 fcdfbf24ca42   hello-world   "/hello"    24 hours ago     Exited (0) 24 hours ago             pensive_shannon
 ~~~
+
+### 7. ¿Cuanta memoria en el disco duro ocupaste?
+
+Podemos comprobar cuanto espacio están ocupando las imágenes y los contenedores con el comando <code>docker system df</code>
+~~~
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          2         2         7.811MB   0B (0%)
+Containers      6         2         205B      0B (0%)
+Local Volumes   0         0         0B        0B
+Build Cache     0         0         0B        0B
+~~~
